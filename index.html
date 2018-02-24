@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>新浪微博输入框</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .same {
+      width:300px;
+      height:400px;
+      font-size:14px;
+      font-family: Arial, 'Microsoft YaHei';
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="at.css">
+</head>
+<body>
+  <div>
+    <textarea class="same" id="textarea" placeholder="说点什么吧……"></textarea>
+  </div>
+
+<script type="text/javascript" src="at.js"></script>
+<script type="text/javascript">
+  window.onload = function () {
+    var textarea = document.getElementById("textarea");
+    new at(textarea, {
+      fetchList:function(query,cb) {
+        setTimeout(function(){
+          cb(['abcdef','bcdef','cdef','def','ef'].filter(item => item.indexOf(query) >= 0))
+        },300)
+      },
+      onAtChange:function(data) {
+        console.log(data)
+      }
+    });
+  }
+</script>
+</body>
+</html>

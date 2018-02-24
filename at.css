@@ -1,0 +1,24 @@
+.at-list {
+    position: absolute;
+    background: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 2px;
+    box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.2);
+    z-index: 10001;
+    display: none;
+}
+
+.at-list  .list-content, .at-list .list-title {
+    font-family: Arial, 'Microsoft YaHei';
+    font-size: 12px;
+    padding: 6px 10px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.at-list  .list-content.list-active {
+    color: #eb7350;
+    background-color: #f2f2f5;
+}
