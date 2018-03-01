@@ -1,4 +1,4 @@
-# sinaAt
+# At.js
 Mentions autocomplete like `At.js` with zero dependency and easy usage if you just want something like sina weibo `@` mentions
 
 # Usage
