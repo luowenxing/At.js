@@ -15,25 +15,33 @@
       font-family: Arial, 'Microsoft YaHei';
     }
   </style>
-  <link rel="stylesheet" type="text/css" href="at.css">
+  <link rel="stylesheet" type="text/css" href="sinaAt.css">
 </head>
 <body>
   <div>
     <textarea class="same" id="textarea" placeholder="说点什么吧……"></textarea>
   </div>
 
-<script type="text/javascript" src="at.js"></script>
+<script type="text/javascript" src="sinaAt.js"></script>
 <script type="text/javascript">
   window.onload = function () {
     var textarea = document.getElementById("textarea");
     new at(textarea, {
       fetchList:function(query,cb) {
         setTimeout(function(){
-          cb(['abcdef','bcdef','cdef','def','ef'].filter(item => item.indexOf(query) >= 0))
+          cb([
+            {name:'abcdef',id:0},
+            {name:'abcde',id:1},
+            {name:'abc',id:2},
+            {name:'ab',id:3},
+            {name:'a',id:4}].filter(item => item.name.indexOf(query) >= 0))
         },300)
       },
       onAtChange:function(data) {
         console.log(data)
+      },
+      getText:function(data) {
+        return data.name
       }
     });
   }
